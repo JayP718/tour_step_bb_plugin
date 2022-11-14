@@ -1,0 +1,151 @@
+{
+  "type": "component",
+  "metadata": {},
+  "schema": {
+    "name": "sheperds_sheep",
+    "friendlyName": "sheperds_sheep",
+    "description": "A plugin which goes in conjunction with the Shepherd Walkthrough Plugin. Nest elements inside this plugin and create each step in your walk through!",
+    "icon": "RailTop",
+    "hasChildren":true,
+    "settings": [
+      {
+        "type": "text",
+        "key": "title",
+        "label": "Title"
+      },
+      {
+        "type": "text",
+        "key": "text",
+        "label": "Text"      },
+      {
+        "type": "select",
+        "label": "Pop-Up Position",
+        "key": "pop_position",
+        "defaultValue": "bottom",
+        "options": [
+          {
+            "value": "bottom",
+            "label": "bottom"
+          },
+          {
+            "value": "auto",
+            "label": "auto"
+          },
+          {
+            "value": "auto-start",
+            "label": "auto-start"
+          },
+          {
+            "value": "auto-end",
+            "label": "auto-end"
+          },
+          {
+            "value": "top",
+            "label": "top"
+          },
+          {
+            "value": "top-start",
+            "label": "top-start"
+          },
+          {
+            "value": "top-end",
+            "label": "top-end"
+          },
+          {
+            "value": "bottom",
+            "label": "bottom"
+          },
+          {
+            "value": "bottom-end",
+            "label": "bottom-end"
+          },
+          {
+            "value": "right",
+            "label": "right"
+          },
+          {
+            "value": "right-start",
+            "label": "right-start"
+          },
+          {
+            "value": "right-end",
+            "label": "right-end"
+          },
+          {
+            "value": "left",
+            "label": "left"
+          },
+          {
+            "value": "left-start",
+            "label": "left-start"
+          },
+          {
+            "value": "left-end",
+            "label": "left-end"
+          }
+        ]
+      },
+      {
+        "section": true,
+        "name": "Advanced Customization",
+        "settings": [
+          {
+            "type": "boolean",
+            "label": "Advance On",
+            "key": "advanceOn",
+            "defaultValue": false
+          },
+          {
+            "type": "text",
+            "label": "CSS Selector",
+            "key": "selector",
+            "required": true,
+            "dependsOn":"advanceOn"
+          },
+          {
+            "type": "event",
+            "label": "Event",
+            "key": "selector",
+            "required": true,
+            "dependsOn":"advanceOn"
+          }
+        ]
+      },
+      {
+        "section": true,
+        "name": "Configuration",
+        "settings": [
+          {
+            "type": "boolean",
+            "label": "Do not Include",
+            "key": "showOn",
+            "defaultValue": false
+          },
+          {
+            "type": "boolean",
+            "label": "Target Clickable",
+            "key": "canClickTarget",
+            "defaultValue": false
+          },
+          {
+            "type": "boolean",
+            "label": "Show Cancel Icon",
+            "key": "cancelIcon",
+            "defaultValue": false
+          },
+          {
+            "type": "boolean",
+            "label": "Show Arrow",
+            "key": "arrow",
+            "defaultValue": true          },
+          {
+            "type": "boolean",
+            "label": "Allow row selection",
+            "key": "allowSelectRows",
+            "defaultValue": false
+          }
+        ]
+      }
+    ]
+  }
+}
