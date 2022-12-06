@@ -1,5 +1,5 @@
 {
-  "name": "sheperds_sheep",
+  "name": "tourstep",
   "version": "1.0.0",
   "description": "A plugin which goes in conjunction with the Shepherd Walkthrough Plugin. Nest elements inside this plugin and create each step in your walk through!",
   "license": "MIT",

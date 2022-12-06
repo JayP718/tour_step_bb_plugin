@@ -2,25 +2,40 @@
   "type": "component",
   "metadata": {},
   "schema": {
-    "name": "sheperds_sheep",
-    "friendlyName": "sheperds_sheep",
-    "description": "A plugin which goes in conjunction with the Shepherd Walkthrough Plugin. Nest elements inside this plugin and create each step in your walk through!",
+    "name": "tourstep",
+    "friendlyName": "Tour Step",
+    "description": "A plugin which goes in conjunction with the Shepherd Tour Plugin. Nest elements inside this plugin and create each step in your walk through!",
     "icon": "RailTop",
-    "hasChildren":true,
+    "hasChildren": true,
     "settings": [
       {
         "type": "text",
+        "key": "tourName",
+        "label": "Tour Name*",
+        "required": true
+      },
+      {
+        "type": "text",
         "key": "title",
-        "label": "Title"
+        "label": "Title*",
+        "required": true
       },
       {
         "type": "text",
         "key": "text",
-        "label": "Text"      },
+        "label": "Text*",
+        "required": true
+      },
+      {
+        "type": "number",
+        "key": "ranking",
+        "label": "Ranking* (Must be >0)",
+        "required": true
+      },
       {
         "type": "select",
         "label": "Pop-Up Position",
-        "key": "pop_position",
+        "key": "popposition",
         "defaultValue": "bottom",
         "options": [
           {
@@ -100,27 +115,75 @@
             "label": "CSS Selector",
             "key": "selector",
             "required": true,
-            "dependsOn":"advanceOn"
+            "dependsOn": "advanceOn"
           },
           {
-            "type": "event",
-            "label": "Event",
-            "key": "selector",
-            "required": true,
-            "dependsOn":"advanceOn"
+            "type": "select",
+            "label": "Event Trigger",
+            "key": "eventTrigger",
+            "options": [
+              {
+                "value": "click",
+                "label": "On Click"
+              },
+              {
+                "value": "dblclick",
+                "label": "On Double Click"
+              },
+              {
+                "value": "contextmenu",
+                "label": "Right Click"
+              },
+              {
+                "value": "mousedown",
+                "label": "Mouse Down"
+              },
+              {
+                "value": "mouseup",
+                "label": "Mouse Up"
+              },
+              {
+                "value": "mouseenter",
+                "label": "Mouse Enter"
+              },
+              {
+                "value": "mouseleave",
+                "label": "Mouse Leave"
+              }
+            ]
           }
         ]
       },
       {
         "section": true,
-        "name": "Configuration",
+        "name": "Buttons",
         "settings": [
           {
             "type": "boolean",
-            "label": "Do not Include",
-            "key": "showOn",
-            "defaultValue": false
+            "label": "Show Previous Button",
+            "key": "showPrevBtn",
+            "defaultValue": true
           },
+          {
+            "type": "boolean",
+            "label": "Show Next Button",
+            "key": "showNextBtn",
+            "defaultValue": true
+          },
+          {
+            "type": "boolean",
+            "label": "Show Complete Button",
+            "key": "showCompleteBtn",
+            "defaultValue": false
+          }
+        ]
+      }
+      ,
+      {
+        "section": true,
+        "name": "Configuration",
+        "settings": [
+         
           {
             "type": "boolean",
             "label": "Target Clickable",
@@ -131,17 +194,20 @@
             "type": "boolean",
             "label": "Show Cancel Icon",
             "key": "cancelIcon",
-            "defaultValue": false
+            "defaultValue": true
           },
+      
+          
           {
             "type": "boolean",
             "label": "Show Arrow",
             "key": "arrow",
-            "defaultValue": true          },
+            "defaultValue": true
+          },
           {
             "type": "boolean",
-            "label": "Allow row selection",
-            "key": "allowSelectRows",
+            "label": "Modal Step",
+            "key": "modalStepFlag",
             "defaultValue": false
           }
         ]
