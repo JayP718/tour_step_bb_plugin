@@ -209,6 +209,11 @@
             "label": "Modal Step",
             "key": "modalStepFlag",
             "defaultValue": false
+          },
+          {
+            "type": "text",
+            "label": "Attach To Override",
+            "key": "attachToOverride"
           }
         ]
       }

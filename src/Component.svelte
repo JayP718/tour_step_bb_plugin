@@ -9,7 +9,7 @@
   const component = getContext("component");
 
 </script>
- 
+    
 <div use:styleable={$component.styles}>
   {#if error}
     <div class="error">{error}</div>
@@ -19,7 +19,7 @@
     </div>
   {/if}
 </div>
-    
+     
 <style>
   .error {
     color: white;
